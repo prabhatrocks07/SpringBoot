@@ -1,0 +1,22 @@
+# Initialization DB schema
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/test
+    username: root
+    password: Password123
+    
+#    schema: classpath:/data/h2db/schema.sql
+#    data: classpath:/data/h2db/data.sql
+    
+##
+# Spring Security Configuration
+##
+  security:
+    user:
+      name: user
+      password: Password123
+
+
+     
+  

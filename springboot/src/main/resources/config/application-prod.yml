@@ -1,0 +1,38 @@
+# Datasource configuration
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost//data/test
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+##
+# Hibernate JPA Configuration
+##    
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties: 
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+##
+# Spring Security Configuration
+##        
+  security: 
+    user: 
+      name: user
+      password: Password123
+      
+#Caffeine Cache  
+  cache:
+    cache-names: employees
+    caffeine:
+      spec: maximumSize=500,expireAfterAccess=600s
+    
+      
+    
+
+
+     
+  

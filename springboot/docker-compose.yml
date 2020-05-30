@@ -1,0 +1,25 @@
+version: "3"
+services:
+ mysql_database:
+  image: mysql:5.6
+  ports:
+   - "3306:3306"
+  container_name: mysql_database
+  volumes:
+    - /my/custom:/etc/mysql/
+  network_mode: host
+  environment:
+   MYSQL_ROOT_PASSWORD: Password123
+   MYSQL_DATABASE: test
+   MYSQL_USER: root
+   MYSQL_PASSWORD:
+
+ docker-spring-boot:
+  image: docker-spring-boot
+  restart: always
+  network_mode: host
+  container_name: docker-spring-boot
+  depends_on:
+   - mysql_database
+  ports:
+   - "8080:8080"
